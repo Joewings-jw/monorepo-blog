@@ -1,0 +1,38 @@
+name: Camera App Workflow
+
+on:
+  push:
+    paths:
+      - 'camera_app/**'
+  pull_request:
+    paths:
+      - 'camera_app/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        run: |
+          cd camera_app
+          pip install -r requirements.txt || echo "No requirements file."
+
+      - name: Run Tests
+        run: |
+          cd camera_app
+          pytest test_main.py
+
+      - name: Deploy
+        if: github.ref == 'refs/heads/main'
+        run: |
+          cd camera_app
+          echo "Deploying Camera App..."
