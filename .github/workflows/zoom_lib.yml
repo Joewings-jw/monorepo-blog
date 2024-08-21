@@ -36,5 +36,5 @@ jobs:
       - name: Deploy
         if: github.ref == 'refs/heads/main'
         run: |
-          cd camera_lib
+          cd zoom_lib
           echo "Deploying zoom library..."
