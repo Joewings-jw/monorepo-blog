@@ -23,18 +23,18 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          cd camera_app
+          cd apps/camera_app
           python -m pip install --upgrade pip
           pip install -r requirements.txt || echo "No requirements file."
-          pip install pytest  # Install pytest
+          pip install pytest
 
       - name: Run Tests
         run: |
-          cd camera_app
+          cd apps/camera_app
           pytest test_main.py
 
       - name: Deploy
         if: github.ref == 'refs/heads/main'
         run: |
-          cd camera_app
+          cd apps/camera_app
           echo "Deploying Camera App..."

@@ -23,18 +23,18 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          cd zoom_lib
+          cd libs/zoom_lib
           python -m pip install --upgrade pip
           pip install -r requirements.txt || echo "No requirements file."
           pip install pytest  # Install pytest
 
       - name: Run Tests
         run: |
-          cd zoom_lib
+          cd libs/zoom_lib
           pytest test_main.py
 
       - name: Deploy
         if: github.ref == 'refs/heads/main'
         run: |
-          cd zoom_lib
+          cd libs/zoom_lib
           echo "Deploying zoom library..."
