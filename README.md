@@ -26,4 +26,4 @@ Below is a glimpse of our monorepo structure:
 └── README.md
 ```
 
-I recently wrote a blog about the nuances of monorepos; feel free to check it out [here](#).
+I recently wrote a blog about the nuances of monorepos; feel free to check it out [here](https://ngugi-dev-blog-page.vercel.app/blog/enhancing-monorepo-workflows-with-gitHub-actions/).
